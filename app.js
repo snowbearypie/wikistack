@@ -10,6 +10,9 @@ app.use(express.urlencoded({extended :  false}));
 
 const userRouter = require('./routes/users');
 
+router.get('/', function(req, res) {
+  res.redirect('/wiki');
+});
 app.use('/wiki', require('./routes/wiki'))
 
 syncDatabase();
